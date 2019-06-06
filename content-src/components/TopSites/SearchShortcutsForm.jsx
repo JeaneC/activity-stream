@@ -128,12 +128,8 @@ export class SearchShortcutsForm extends React.PureComponent {
           </div>
         </div>
         <section className="actions">
-          <button className="cancel" type="button" onClick={this.onCancelButtonClick}>
-            <FormattedMessage id="topsites_form_cancel_button" />
-          </button>
-          <button className="done" type="submit" onClick={this.onSaveButtonClick}>
-            <FormattedMessage id="topsites_form_save_button" />
-          </button>
+          <button className="cancel" type="button" onClick={this.onCancelButtonClick} data-l10n-id="newtab-topsites-cancel-button" />
+          <button className="done" type="submit" onClick={this.onSaveButtonClick} data-l10n-id="newtab-topsites-save-button" />
         </section>
       </form>
     );

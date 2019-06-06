@@ -36,3 +36,9 @@ newtab-topsites-url-validation = Valid URL required
 newtab-topsites-image-url-label = Custom Image URL
 newtab-topsites-use-image-link = Use a custom image…
 newtab-topsites-image-validation = Image failed to load. Try a different URL.
+
+newtab-topsites-cancel-button = Cancel
+newtab-topsites-delete-history-button = Delete from History
+newtab-topsites-save-button = Save
+newtab-topsites-preview-button = Preview
+newtab-topsites-add-button = Add

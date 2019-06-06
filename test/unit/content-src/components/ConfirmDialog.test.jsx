@@ -14,8 +14,8 @@ describe("<ConfirmDialog>", () => {
       visible: true,
       data: {
         onConfirm: [],
-        cancel_button_string_id: "topsites_form_cancel_button",
-        confirm_button_string_id: "topsites_form_save_button",
+        cancel_button_string_id: "newtab-topsites-delete-history-button",
+        confirm_button_string_id: "newtab-topsites-cancel-button",
         eventSource: "HIGHLIGHTS",
       },
     };
@@ -58,9 +58,9 @@ describe("<ConfirmDialog>", () => {
       Object.assign(ConfirmDialogProps.data, {confirm_button_string_id: "primary_foo"});
       wrapper = shallowWithIntl(<ConfirmDialog dispatch={dispatch} {...ConfirmDialogProps} />);
 
-      let doneLabel = wrapper.find(".actions").childAt(1).find(FormattedMessage);
+      let doneLabel = wrapper.find(".actions").childAt(1);
       assert.ok(doneLabel.exists());
-      assert.equal(doneLabel.props().id, ConfirmDialogProps.data.confirm_button_string_id);
+      assert.equal(doneLabel.prop("data-l10n-id"), ConfirmDialogProps.data.confirm_button_string_id);
     });
   });
   describe("click events", () => {
