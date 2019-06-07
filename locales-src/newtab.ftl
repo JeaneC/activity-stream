@@ -42,3 +42,8 @@ newtab-topsites-delete-history-button = Delete from History
 newtab-topsites-save-button = Save
 newtab-topsites-preview-button = Preview
 newtab-topsites-add-button = Add
+
+newtab-confirm-delete-history-p1 = Are you sure you want to delete every instance of this page from your history?
+newtab-confirm-delete-history-p2 = This action cannot be undone.
+
+newtab-topsites-add-search-engine = Add Search Engine

@@ -1,7 +1,7 @@
 import {actionCreators as ac, actionTypes as at} from "common/Actions.jsm";
 import {_ConfirmDialog as ConfirmDialog} from "content-src/components/ConfirmDialog/ConfirmDialog";
-import {FormattedMessage} from "react-intl";
 import React from "react";
+import {shallow} from "enzyme";
 import {shallowWithIntl} from "test/unit/utils";
 
 describe("<ConfirmDialog>", () => {
@@ -44,19 +44,17 @@ describe("<ConfirmDialog>", () => {
     // But if we do provide an icon - we should show it
     assert.lengthOf(wrapper.find(`.icon-${iconName}`), 1);
   });
-  describe("intl message check", () => {
+  describe("fluent message check", () => {
     it("should render the message body sent via props", () => {
       Object.assign(ConfirmDialogProps.data, {body_string_id: ["foo", "bar"]});
-      wrapper = shallowWithIntl(<ConfirmDialog dispatch={dispatch} {...ConfirmDialogProps} />);
-
-      let msgs = wrapper.find(".modal-message").find(FormattedMessage);
+      wrapper = shallow(<ConfirmDialog dispatch={dispatch} {...ConfirmDialogProps} />);
+      let msgs = wrapper.find(".modal-message").find("p");
       assert.equal(msgs.length, ConfirmDialogProps.data.body_string_id.length);
-
-      msgs.forEach((fm, i) => assert.equal(fm.props().id, ConfirmDialogProps.data.body_string_id[i]));
+      msgs.forEach((fm, i) => assert.equal(fm.prop("data-l10n-id"), ConfirmDialogProps.data.body_string_id[i]));
     });
     it("should render the correct primary button text", () => {
       Object.assign(ConfirmDialogProps.data, {confirm_button_string_id: "primary_foo"});
-      wrapper = shallowWithIntl(<ConfirmDialog dispatch={dispatch} {...ConfirmDialogProps} />);
+      wrapper = shallow(<ConfirmDialog dispatch={dispatch} {...ConfirmDialogProps} />);
 
       let doneLabel = wrapper.find(".actions").childAt(1);
       assert.ok(doneLabel.exists());

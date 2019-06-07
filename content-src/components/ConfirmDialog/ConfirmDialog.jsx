@@ -1,6 +1,5 @@
 import {actionCreators as ac, actionTypes} from "common/Actions.jsm";
 import {connect} from "react-redux";
-import {FormattedMessage} from "react-intl";
 import React from "react";
 
 /**
@@ -46,7 +45,7 @@ export class _ConfirmDialog extends React.PureComponent {
     }
 
     return (<span>
-      {message_body.map(msg => <p key={msg}><FormattedMessage id={msg} /></p>)}
+      {message_body.map(msg => <p key={msg} data-l10n-id={msg} />)}
     </span>);
   }
 

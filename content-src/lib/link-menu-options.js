@@ -100,7 +100,7 @@ export const LinkMenuOptions = {
           ac.UserEvent(Object.assign({event: "DELETE", source: eventSource, action_position: index}, siteInfo)),
         ],
         eventSource,
-        body_string_id: ["confirm_history_delete_p1", "confirm_history_delete_notice_p2"],
+        body_string_id: ["newtab-confirm-delete-history-p1", "newtab-confirm-delete-history-p2"],
         confirm_button_string_id: "newtab-topsites-delete-history-button",
         cancel_button_string_id: "newtab-topsites-cancel-button",
         icon: "modal-delete",

@@ -1,5 +1,4 @@
 import {actionCreators as ac, actionTypes as at} from "common/Actions.jsm";
-import {FormattedMessage} from "react-intl";
 import React from "react";
 import {TOP_SITES_SOURCE} from "./TopSitesConstants";
 
@@ -120,9 +119,7 @@ export class SearchShortcutsForm extends React.PureComponent {
     return (
       <form className="topsite-form">
         <div className="search-shortcuts-container">
-          <h3 className="section-title">
-            <FormattedMessage id="section_menu_action_add_search_engine" />
-          </h3>
+          <h3 className="section-title grey-title" data-l10n-id="newtab-topsites-add-search-engine" />
           <div>
             {this.state.shortcuts.map(shortcut => <SelectableSearchShortcut key={shortcut.keyword} shortcut={shortcut} selected={shortcut.isSelected} onChange={this.handleChange} />)}
           </div>
